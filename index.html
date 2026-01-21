@@ -1,60 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cartório de Registro de Brodowski</title>
-
-  styles.css
-  assets/icon.svg
-
   <meta name="description" content="Cartório de Registro de Brodowski — serviços de registro civil, imóveis, títulos e documentos." />
-
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <meta property="og:title" content="Cartório de Registro de Brodowski" />
   <meta property="og:description" content="Informações oficiais de endereço, contato e atendimento." />
   <meta property="og:image" content="assets/og-image.png" />
   <meta property="og:type" content="website" />
 </head>
-
 <body>
-
   <header class="topbar">
-    assets/icon.svg
-    <h1>Cartório de Registro de Brodowski</h1>
+    <div class="container topbar-inner">
+      <img src="assets/logo.png" class="brand-logo" alt="Logotipo do Cartório" />
+      <h1>Cartório de Registro de Brodowski</h1>
+    </div>
   </header>
 
   <main class="container">
-
     <section class="hero">
       <h2>Atendimento com segurança e agilidade</h2>
       <p>Serviços de registro civil, imóveis e títulos e documentos.</p>
-
       <div class="btn-group">
-        tel:(16) 3664-6866📞 Ligar agora</a>
-        https://wa.me/5516999730403💬 WhatsApp</a>
-        mailto:contato@ribrodowski.com.br✉️ E-mail direto</a>
-        https://www.google.com/maps/dir/?api=1&destination=Praça+Martin+Moreira,+51,+Brodowski-SP📍 Traçar rota</a>
+        <a class="btn" href="tel:(16) 3664-6866">📞 Ligar agora</a>
+        <a class="btn outline" href="https://wa.me/5516999730403">💬 WhatsApp</a>
+        <a class="btn outline" href="mailto:contato@ribrodowski.com.br">✉️ E-mail direto</a>
+        <a class="btn outline" href="https://www.google.com/maps/dir/?api=1&destination=Praça+Martin+Moreira,+51,+Brodowski-SP">📍 Traçar rota</a>
       </div>
     </section>
 
     <section class="card-grid">
       <div class="card">
-        <h4>Telefone</h4>
-        <p>tel:(16) 3664-6866📞 (16) 3664-6866</a></p>
+        <h3>Telefone</h3>
+        <p><a class="link" href="tel:(16) 3664-6866">(16) 3664-6866</a></p>
       </div>
-
       <div class="card">
-        <h4>WhatsApp</h4>
-        <p>https://wa.me/5516999730403💬 (16) 99973-0403</a></p>
+        <h3>WhatsApp</h3>
+        <p><a class="link" href="https://wa.me/5516999730403">(16) 99973-0403</a></p>
       </div>
-
       <div class="card">
-        <h4>E-mail</h4>
+        <h3>E-mails</h3>
         <p>
-          mailto:contato@ribrodowski.com.br✉️ contato@ribrodowski.com.br</a>
-          <br><br>
-          mailto:contato@rcbrodowski.com.br✉️ contato@rcbrodowski.com.br</a>
+          <a class="link" href="mailto:contato@ribrodowski.com.br">contato@ribrodowski.com.br</a><br/>
+          <a class="link" href="mailto:contato@rcbrodowski.com.br">contato@rcbrodowski.com.br</a>
         </p>
       </div>
     </section>
@@ -67,25 +58,20 @@
     <section class="grid-2">
       <div class="card">
         <h3>Endereço</h3>
-        <p>Praça Martin Moreira, nº 51 — Centro<br>Brodowski/SP — CEP 14340-027</p>
-        <br>
-        https://www.google.com/maps/dir/?api=1&destination=Praça+Martin+Moreira,+51,+Brodowski-SP
-          📍 Traçar rota
-        </a>
+        <p>Praça Martin Moreira, nº 51 — Centro<br/>Brodowski/SP — CEP 14340-027</p>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Praça+Martin+Moreira,+51,+Brodowski-SP">📍 Traçar rota</a>
       </div>
-
-      <div class="map-wrapper">
-        https://www.google.com/maps?q=Praça+Martin+Moreira,+51,+Brodowski-SP&output=embed
-        </iframe>
+      <div class="map-wrapper card">
+        <iframe src="https://www.google.com/maps?q=Praça+Martin+Moreira,+51,+Brodowski-SP&output=embed" loading="lazy"></iframe>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
-    <p>© Cartório de Registro de Brodowski</p>
-    <p><strong>CNPJ:</strong> 11.345.384/0001-09</p>
+    <div class="container">
+      <p>© Cartório de Registro de Brodowski</p>
+      <p><strong>CNPJ:</strong> 11.345.384/0001-09</p>
+    </div>
   </footer>
-
 </body>
 </html>
