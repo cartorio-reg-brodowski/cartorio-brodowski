@@ -1,27 +1,35 @@
-/* Centralizar o cabeçalho */
+/* --- Cabeçalho centralizado --- */
 .header-center {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column;     /* logo em cima, nome embaixo */
+  align-items: center;        /* centraliza horizontalmente */
   justify-content: center;
-  padding: 1.2rem 0;
+  padding: 1.25rem 0 1.5rem;
+  gap: 0.6rem;                /* espaço entre logo e texto */
 }
-
-/* Aumentar a logo */
+/* --- Logo maior --- */
 .brand-logo {
-  width: 150px;     /* ajuste para aumentar ou diminuir */
+  width: 160px;
   height: auto;
-  margin-bottom: 0.6rem;
+  display: block;
 }
-
-/* Aumentar o nome do cartório */
-header h1 {
-  font-size: 2.5rem; /* antes era menor, agora bem mais destacado */
-  font-weight: 700;
-  color: #0f172a;
+/* --- Título maior e centralizado --- */
+.brand-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;           /* mais impacto */
+  font-size: 2.25rem;         /*
+  line-height: 1.2;
+  color: #0f172a;             /* cor do seu tema atual */
   text-align: center;
   margin: 0;
 }
+/* --- Ajuste responsivo opcional: telas grandes ficam ainda mais imponentes --- */
+@media (min-width: 992px) {
+  .brand-logo { width: 148px; } 
+  .brand-title { font-size: 2.5rem; }
+}
+``
 :root{
   --bg:#ffffff;
   --fg:#0f172a;
