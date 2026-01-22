@@ -1,65 +1,91 @@
-/* --- Cabeçalho centralizado --- */
-.header-center {
-  display: flex;
-  flex-direction: column;     /* logo em cima, nome embaixo */
-  align-items: center;        /* centraliza horizontalmente */
-  justify-content: center;
-  padding: 1.25rem 0 1.5rem;
-  gap: 0.6rem;                /* espaço entre logo e texto */
-}
-/* --- Logo maior --- */
-.brand-logo {
-  width: 160px;
-  height: auto;
-  display: block;
-}
-/* --- Título maior e centralizado --- */
-.brand-title {
-  margin: 0;
-  text-align: center;
-  font-weight: 800;           /* mais impacto */
-  font-size: 2.25rem;         /*
-  line-height: 1.2;
-  color: #0f172a;             /* cor do seu tema atual */
-  text-align: center;
-  margin: 0;
-}
-/* --- Ajuste responsivo opcional: telas grandes ficam ainda mais imponentes --- */
-@media (min-width: 992px) {
-  .brand-logo { width: 148px; } 
-  .brand-title { font-size: 2.5rem; }
-}
-``
+
+/* ===== Paleta base (preto, cinza e vermelho) ===== */
 :root{
   --bg:#ffffff;
-  --fg:#0f172a;
-  --muted:#475569;
-  --primary:#dc2626; /* vermelho baseado na sua logo */
-  --primary-700:#b91c1c;
-  --border:#e2e8f0;
-  --card:#f8fafc;
+  --fg:#0f172a;          /* preto/antracito para títulos */
+  --muted:#475569;       /* cinza para textos secundários */
+  --primary:#dc2626;     /* vermelho institucional */
+  --primary-700:#b91c1c; /* vermelho (hover) */
+  --border:#e5e7eb;      /* cinza claro de borda */
+  --card:#f8fafc;        /* cinza muito claro em cards */
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--fg);background:var(--bg)}
-.container{max-width:1000px;margin:0 auto;padding:1rem}
-.topbar{border-bottom:1px solid var(--border);background:#fff}
-.topbar-inner{display:flex;align-items:center;gap:12px;padding:.5rem 0}
-.brand-logo{height:44px;width:auto}
-.hero{padding:2rem 0 1rem}
-.hero h2{font-size:1.9rem;margin:.25rem 0}
-.btn-group{margin-top:.75rem}
-.btn{display:inline-block;background:var(--primary);color:#fff;padding:.65rem 1rem;border-radius:.6rem;text-decoration:none;margin:.25rem;font-weight:600;border:1px solid var(--primary)}
-.btn:hover{background:var(--primary-700);border-color:var(--primary-700)}
-.btn.outline{background:transparent;color:var(--primary)}
-.btn.outline:hover{background:#fee2e2}
-.card{background:var(--card);border:1px solid var(--border);border-radius:.8rem;padding:1rem;margin:1rem 0}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.grid-2{display:grid;grid-template-columns:1fr;gap:1rem}
-@media(min-width:800px){.grid-2{grid-template-columns:1fr 1fr}}
-.link{color:var(--primary);text-decoration:none;border-bottom:1px dashed #fca5a5}
-.link:hover{text-decoration:underline}
-.map-wrapper iframe{width:100%;height:280px;border:0;border-radius:.6rem}
-.footer{border-top:1px solid var(--border);background:#fff;color:var(--muted);text-align:center;padding:1.25rem 0;margin-top:1rem}
 
+/* Topbar limpa e aderente ao topo (opcional) */
+.topbar{
+  border-bottom:1px solid var(--border);
+  background:#fff;
+  position:sticky; top:0; z-index:20;
+}
 
+/* ===== Cabeçalho centralizado ===== */
+.header-center{
+  display:flex;
+  flex-direction:column;       /* logo em cima, nome embaixo */
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  padding:1.2rem 0 1.6rem;
+  position:relative;           /* necessário p/ marca d’água */
+  isolation:isolate;           /* garante o stacking correto */
+}
+
+/* ===== Marca d’água com a foto atrás do nome ===== */
+.header-center::before{
+  content:"";
+  position:absolute;
+  inset:-20px 0 -12px 0;       /* leve extravaso para cobrir todo o cabeçalho */
+  background:
+    url('assets/Foto-Recepção.png') center/cover no-repeat; /* use o nome exato */
+  opacity:.08;                 /* intensidade da marca d’água (0.06–0.12 recomendado) */
+  filter:grayscale(35%) contrast(105%); /* discreto e elegante */
+  z-index:-1;                  /* fica por trás do conteúdo do header */
+  pointer-events:none;         /* não bloqueia cliques */
+}
+
+/* ===== Logo e título maiores ===== */
+.brand-logo{
+  width:150px;                 /* aumente se quiser: 168–180px */
+  height:auto;
+  display:block;
+}
+.brand-title{
+  margin:0;
+  text-align:center;
+  font-weight:800;
+  font-size:2.5rem;            /* aumente se desejar: 2.75–3rem */
+  line-height:1.2;
+  color:var(--fg);
+}
+
+/* ===== Ajuste responsivo (telas grandes = mais presença) ===== */
+@media (min-width: 992px){
+  .brand-logo  { width:168px; }
+  .brand-title { font-size:2.75rem; }
+}
+
+/* ===== Botões, links e cards (coerentes com a paleta) ===== */
+.btn{
+  background:var(--primary);
+  color:#fff; font-weight:700;
+  padding:.7rem 1.1rem;
+  border-radius:.6rem;
+  border:1px solid var(--primary);
+  display:inline-block; text-decoration:none;
+}
+.btn:hover{ background:var(--primary-700); border-color:var(--primary-700); }
+.btn.outline{ background:transparent; color:var(--primary); }
+.btn.outline:hover{ background:#fee2e2; }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:.8rem;
+  padding:1rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.05); /* leve profundidade */
+}
+
+/* Tipografia e cores globais coerentes */
+h1,h2,h3{ color:var(--fg); }
+p,li,small{ color:var(--muted); }
+a{ color:var(--primary); text-decoration:none; }
+a:hover{ text-decoration:underline; }
