@@ -32,7 +32,7 @@ body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);colo
 .header-center::before{
   content:""; position:absolute; inset:-20px 0 -12px 0;
   background:url('assets/Foto-Recepção.png') center/cover no-repeat;
-  opacity:.08; filter:grayscale(35%) contrast(105%);
+  opacity:.10; filter:grayscale(35%) contrast(105%);
   z-index:-1; pointer-events:none;
 }
 
