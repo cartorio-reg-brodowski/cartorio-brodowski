@@ -1,51 +1,50 @@
 :root{
   --bg:#ffffff;
-  --fg:#0f172a;          /* preto/antracito para títulos */
-  --muted:#475569;       /* cinza para textos secundários */
+  --fg:#0f172a;          /* preto/antracito */
+  --muted:#475569;       /* cinza secundário */
   --primary:#dc2626;     /* vermelho institucional */
   --primary-700:#b91c1c; /* vermelho hover */
-  --border:#e5e7eb;      /* cinza claro bordas */
-  --card:#f8fafc;        /* cinza muito claro para cards */
+  --border:#e5e7eb;      /* cinza de borda */
+  --card:#f8fafc;        /* cinza claro para cards */
 }
 
-/* Reset mínimo */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);color:var(--fg)}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
 
-/* Topbar com linha vermelha (faixa) e marca d'água no header */
-.topbar{
-  border-bottom:1px solid var(--border);
-  background:#fff;
-  position:sticky; top:0; z-index:20;
-}
-/* Faixa vermelha fina no rodapé do cabeçalho */
-.topbar::after{
-  content:""; display:block; height:4px; background:var(--primary); opacity:.9;
-}
+/* Topbar com faixa vermelha */
+.topbar{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:20}
+.topbar::after{content:"";display:block;height:4px;background:var(--primary);opacity:.9}
 
-.header-center{
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:.6rem; padding:1.2rem 0 1.6rem; position:relative; isolation:isolate;
-}
-/* Marca d'água usando a sua foto com nome informado: Foto-Recepção.png */
-.header-center::before{
-  content:""; position:absolute; inset:-20px 0 -12px 0;
-  background:url('assets/Foto-Recepção.png') center/cover no-repeat;
-  opacity:.10; filter:grayscale(35%) contrast(105%);
-  z-index:-1; pointer-events:none;
-}
+/* Header centralizado + marca d'água */
+.header-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;padding:1.2rem 0 1.6rem;position:relative;isolation:isolate}
+.header-center::before{content:"";position:absolute;inset:-20px 0 -12px 0;background:url('assets/foto-recepcao.png') center/cover no-repeat;opacity:.08;filter:grayscale(35%) contrast(105%);z-index:-1;pointer-events:none}
+.brand-logo{width:150px;height:auto;display:block}
+.brand-title{margin:0;text-align:center;font-weight:800;font-size:2.5rem;line-height:1.2;color:var(--fg)}
+@media(min-width:992px){.brand-logo{width:168px}.brand-title{font-size:2.75rem}}
 
-.brand-logo{ width:150px; height:auto; display:block }
-.brand-title{ margin:0; text-align:center; font-weight:800; font-size:2.5rem; line-height:1.2; color:var(--fg) }
+/* Hero */
+.hero{padding:2.2rem 1rem;text-align:center}
+.hero h2{margin:0 0 .4rem;font-size:2rem;color:var(--fg)}
+.hero p{margin:.25rem 0 1rem;color:#334155}
 
-@media(min-width:992px){ .brand-logo{width:168px} .brand-title{font-size:2.75rem} }
+/* Botões */
+.btn{background:var(--primary);color:#fff;font-weight:700;padding:.7rem 1.1rem;border-radius:.6rem;border:1px solid var(--primary);display:inline-block;text-decoration:none}
+.btn:hover{background:var(--primary-700);border-color:var(--primary-700)}
+.btn.outline{background:transparent;color:var(--primary)}
+.btn.outline:hover{background:#fee2e2}
 
-/* Paleta aplicada a elementos comuns (exemplos) */
-a{ color:var(--primary); text-decoration:none }
-a:hover{ text-decoration:underline }
-.btn{ background:var(--primary); color:#fff; font-weight:700; padding:.7rem 1.1rem; border-radius:.6rem; border:1px solid var(--primary); display:inline-block }
-.btn:hover{ background:var(--primary-700); border-color:var(--primary-700) }
-.btn.outline{ background:transparent; color:var(--primary) }
-.btn.outline:hover{ background:#fee2e2 }
-.card{ background:var(--card); border:1px solid var(--border); border-radius:.8rem; padding:1rem; box-shadow:0 4px 16px rgba(15,23,42,.05) }
+/* Cards e grades */
+.card{background:var(--card);border:1px solid var(--border);border-radius:.8rem;padding:1rem;margin:1rem 0;box-shadow:0 4px 16px rgba(15,23,42,.05)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.grid-2{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:800px){.grid-2{grid-template-columns:1fr 1fr}}
+.link{color:var(--primary);text-decoration:none;border-bottom:1px dashed #fca5a5}
+.link:hover{text-decoration:underline}
+
+/* Mapa */
+.map-wrapper iframe{width:100%;height:280px;border:0;border-radius:.6rem}
+
+/* Rodapé */
+.footer{border-top:1px solid var(--border);background:#fff;color:var(--muted);text-align:center;padding:1.25rem 0;margin-top:1rem}
